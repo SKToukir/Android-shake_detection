@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="toukir.best.vamerica.shakeapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,13 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver android:name=".OnBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="toukir.best.vamerica.shakeapp.android.action.broadcast"/>
+                <action android:name="toukir.best.vamerica.shakeapp.android.action.broadcast" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".MultiTouchEventActivity" />
+        <activity android:name=".VoiceRecordActivity" />
+        <activity android:name=".SpeechTotext"></activity>
     </application>
 
 </manifest>
